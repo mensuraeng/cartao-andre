@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="robots" content="noindex">
+<meta name="description" content="Cartão digital MENSURA Engenharia">
+<title>MENSURA Engenharia | Cartão digital</title>
+<link rel="icon" href="assets/icone.png">
+<link rel="apple-touch-icon" href="assets/icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* paleta cinza da linha Gestão de Ativos / Gestão Técnica do Patrimônio */
+  --bg:#0A0A0A;--panel:#141517;
+  --text:#F9F9F7;--muted:#A8A8A8;
+  --accent:#A0AEC0;--accent-soft:#CBD5E0;--slate:#4A5568;--ink:#1A1A1A;
+  --hair:rgba(255,255,255,.08);--hair-green:rgba(160,174,192,.30);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  min-height:100vh;min-height:100dvh;
+  font-family:Inter,Arial,sans-serif;font-size:16px;line-height:1.625;color:var(--text);
+  background:var(--bg);
+  display:flex;justify-content:center;align-items:center;
+  padding:28px 16px calc(28px + env(safe-area-inset-bottom));
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.card{
+  position:relative;width:min(100%,420px);
+  background:var(--panel);border:1px solid var(--hair);border-radius:12px;
+  box-shadow:0 24px 60px rgba(0,0,0,.45);overflow:hidden;
+  animation:up .7s var(--ease) both;
+}
+.card::before{content:"";display:block;height:3px;background:var(--accent)}
+.content{padding:32px 28px 28px}
+.logo{display:block;width:100%;max-width:280px;height:auto;margin:4px auto 0}
+.line{height:1px;background:var(--hair-green);margin:28px 0}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--accent);font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase}
+.eyebrow::before,.eyebrow::after{content:"";width:24px;height:1px;background:var(--accent)}
+.name{text-align:center;font-family:"Playfair Display",Georgia,serif;font-weight:600;font-size:32px;line-height:1.25;letter-spacing:-.025em;margin:12px 0 4px}
+.role{text-align:center;color:var(--muted);font-size:16px;margin:0 0 28px}
+.buttons{display:grid;gap:12px}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  min-height:52px;padding:14px 16px;border-radius:8px;
+  font-size:15px;font-weight:500;letter-spacing:.01em;text-decoration:none;
+  color:var(--text);background:transparent;border:1px solid rgba(203,213,224,.22);
+  transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);
+}
+.btn:hover,.btn:focus-visible{border-color:var(--accent);color:#fff;background:rgba(160,174,192,.10)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn.primary{background:var(--accent-soft);border-color:var(--accent-soft);color:var(--ink);font-weight:600}
+.btn.primary:hover,.btn.primary:focus-visible{background:#EDF2F7;border-color:#EDF2F7;color:var(--ink)}
+.btn svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.notice{margin:16px 0 0;color:#E0A23B;font-size:12px;line-height:1.5;text-align:center}
+.notice:empty{display:none}
+.foot{margin-top:28px;padding-top:20px;border-top:1px solid var(--hair);text-align:center}
+.axes{color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+.org-name{color:var(--text);font-size:13px;font-weight:500;letter-spacing:.04em;margin-bottom:6px}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.card{animation:none}.btn{transition:none}}
+@media (max-width:360px){.content{padding:28px 20px 24px}.name{font-size:28px}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="content">
+    <header>
+      <img class="logo" src="assets/mensura-logo.png" width="1084" height="260" alt="MENSURA Engenharia">
+    </header>
+    <div class="line"></div>
+    <div class="eyebrow">Cartão de visita digital</div>
+    <h1 class="name" id="name">André Parro</h1>
+    <p class="role" id="role">Diretor Executivo</p>
+    <nav class="buttons" aria-label="Contato">
+      <a class="btn primary" href="contato.vcf" download="Andre-Parro-MENSURA.vcf"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="9" r="3"/><path d="M6 19c0-4 12-4 12 0"/></svg>Salvar contato</a>
+      <a class="btn" id="whatsapp" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.3A8 8 0 1 1 20 11.5Z"/><path d="m9 9 1 2 2 2 2 1 1-1"/></svg>Conversar pelo WhatsApp</a>
+      <a class="btn" id="presentation" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16v18H4zM8 8h8M8 12h8M8 16h5"/></svg>Conhecer a MENSURA</a>
+      <a class="btn" id="email" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg>Enviar e-mail</a>
+    </nav>
+    <p class="notice" id="notice"></p>
+    <footer class="foot">
+      <div class="org-name">MENSURA Engenharia</div>
+      <div class="axes">Inspeção · Manutenção · Decisão</div>
+    </footer>
+  </div>
+</main>
+<script src="config.js"></script>
+<script>
+const c=window.MENSURA_CONFIG||{};
+if(c.nome){document.querySelector('#name').textContent=c.nome;document.title=c.nome+' | MENSURA Engenharia'}
+if(c.cargo)document.querySelector('#role').textContent=c.cargo;
+function setup(id,href){const el=document.getElementById(id);if(href){el.href=href;el.target=id==='presentation'?'_blank':'_self';if(id==='presentation')el.rel='noopener noreferrer'}else{el.addEventListener('click',e=>{e.preventDefault();alert('Este botão será ativado após configurar os dados profissionais.')})}}
+setup('whatsapp',c.whatsapp?`https://wa.me/${c.whatsapp.replace(/\D/g,'')}`:null);
+setup('presentation',c.apresentacao||null);
+setup('email',c.email?`mailto:${c.email}`:null);
+if(!(c.whatsapp&&c.email&&c.apresentacao))document.querySelector('#notice').textContent='Alguns botões aguardam a configuração dos dados profissionais.';
+</script>
+</body>
+</html>
